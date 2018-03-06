@@ -1,0 +1,18 @@
+# Javascript Node CircleCI 1.0 configuration file
+#
+
+## Customize the test machine
+machine:
+	services:
+		- docker
+
+## Customize dependencies
+dependencies:
+	override:
+		- docker build --tag platzi:test .
+
+## Customize test commands
+test:
+	override:
+		- docker run platzi:test npm test
+
