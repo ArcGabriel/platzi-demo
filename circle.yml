@@ -3,16 +3,16 @@
 
 ## Customize the test machine
 machine:
-	services:
-		- docker
+   services:
+      - docker
 
 ## Customize dependencies
 dependencies:
-	override:
-		- docker build --tag platzi:test
+   override:
+      - docker build --tag platzi:test .
 
 ## Customize test commands
 test:
-	override:
-		- docker run platzi:test npm test
+   override:
+      - docker run platzi:test npm test
 
