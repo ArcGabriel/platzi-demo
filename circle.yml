@@ -9,7 +9,7 @@ machine:
 ## Customize dependencies
 dependencies:
 	override:
-		- docker build --tag platzi:test .
+		- docker build --tag platzi:test
 
 ## Customize test commands
 test:
