@@ -1,5 +1,5 @@
 
-npm install --global now
+sudo npm install --global --unsafe-perm now
 
 echo "deploying..."
 URL= $(now --docker --public -t $NOW_TOKEN)
