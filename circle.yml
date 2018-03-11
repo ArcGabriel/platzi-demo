@@ -6,7 +6,7 @@
 ## Customize the test machine
 machine:
    node:                # Añadido por la integración con CircleCI
-      version: 6.1.0    # al tener Node.JS tendremos npm
+      version: 6.11     # al tener Node.JS tendremos npm
    services:
       - docker 
 
