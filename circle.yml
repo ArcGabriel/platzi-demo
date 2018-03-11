@@ -1,10 +1,14 @@
 # Javascript Node CircleCI 1.0 configuration file
 #
+# IMPORTANTE: CircleCI no es compatible con identacion \t utilizar spaces
+#
 
 ## Customize the test machine
 machine:
+   node:                # Añadido por la integración con CircleCI
+      version: 6.1.0    # al tener Node.JS tendremos npm
    services:
-      - docker
+      - docker 
 
 ## Customize dependencies
 dependencies:
@@ -16,3 +20,9 @@ test:
    override:
       - docker run platzi:test npm test
 
+## 
+deployment:
+   qa:
+      branch: /feature_.*/    # Prefijo de branchs, cuyo push desencadenarán instancias QA
+      commands:
+         - sh deployments/qa.sh  # Script a ejecutar dentro de la instancia QA, en la fase deployment
